@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">LIST</th>
+      <th scope="col">DETAILS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let user of users">
+    <app-user [user]="user"></app-user>
+          </li>
+        </ul>
+      </div></th>
+      <td><div class="col-md-8">
+        <router-outlet></router-outlet>
+       </div></td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,15 @@
+<p>Details of the user:<br>
+user id : {{user.id}}<br>
+user name : {{user.name}}<br>
+user username : {{user.username}}<br>
+user email : {{user.email}}<br>
+user phone: {{user.phone}}
+user website:{{user.website}}<br>
+<!-- user address:<br>
+<pre>{{user.address | json}}</pre>
+user Company:<br>
+<pre>{{user.company | json}}</pre> -->
+<button class="btn btn-success" (click)="CreateUser()">Create User </button>
+<button class="btn btn-primary" (click)="UpdateUser()">Update User</button>
+<button class="btn btn-danger" (click)="DeleteUser()">Delete User</button>
+<!-- <button class="btn btn-warning" (click)="getUserPosts()">Get Post By User</button> -->

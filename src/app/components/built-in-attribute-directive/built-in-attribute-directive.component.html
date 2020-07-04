@@ -1,0 +1,9 @@
+<h4>NgClass & NgStyle</h4>
+<button btn btn-primary (click)="gradientToogle=!gradientToogle">Toogle Gradient</button>
+<div [ngClass]="gradientToogle?'blue-gradient':'red-gradient'"
+[ngStyle] ="{color:'white','text-align':'center'}">
+  <br><br><br><br><br><br><br><br>  this is a div
+</div>
+<h4>NgNonBindable</h4>
+<p ngNonBindable> The user's name can be print on the screen in angular using string interpolation syntax like:
+   {{username}}</p>
