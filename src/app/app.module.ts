@@ -21,6 +21,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { BuiltInAttributeDirectiveComponent } from './components/built-in-attribute-directive/built-in-attribute-directive.component';
 import { DirectivehostComponent } from './components/directivehost/directivehost.component';
 import { ChangeCaseDirective } from './directives/change-case.directive';
+import { UnlessDirective } from './directives/unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ChangeCaseDirective } from './directives/change-case.directive';
     ParentComponent,
     BuiltInAttributeDirectiveComponent,
     DirectivehostComponent,
-    ChangeCaseDirective
+    ChangeCaseDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directivehost.component.scss']
 })
 export class DirectivehostComponent implements OnInit {
-
+showunless:boolean;
   constructor() { }
 
   ngOnInit(): void {
+    this.showunless=true
   }
 
 }
