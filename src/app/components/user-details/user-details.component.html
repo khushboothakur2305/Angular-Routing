@@ -1,23 +1,94 @@
-<p>Details of the user:<br>
-user id : {{user.id}}<br>
-user name : {{user.name}}<br>
-user username : {{user.username}}<br>
-user email : {{user.email}}<br>
-user phone: {{user.phone}}<br>
-user website:{{user.website}}<br>
-<button class="btn btn-dark" (click)="getAddress()">Get Address </button>
+<p>Details of the user:<br /></p>
+<table>
+  <tr>
+    <th>user id :</th>
+    <th>{{ user.id }}</th>
+  </tr>
+  <tr>
+    <th>user name :</th>
+    <th>{{ user.name }}</th>
+  </tr>
+  <tr>
+    <th>user username :</th>
+    <th>{{ user.username }}</th>
+  </tr>
+  <tr>
+    <th>user email :</th>
+    <th>{{ user.email }}</th>
+  </tr>
+  <tr>
+    <th>user phone:</th>
+    <th>{{ user.phone }}</th>
+  </tr>
+  <tr>
+    <th>user website:</th>
+    <th>{{ user.website }}</th>
+  </tr>
+</table>
+<button class="alert alert-info" (click)="getAddress()">{{ Address }}</button>
+<button  class="alert alert-dark" (click)="getCompany()">{{ company }}</button>
+<button class="alert alert-danger"  (click)="CreateUser()">Create User</button>
+<button class="alert alert-primary" (click)="UpdateUser()">Update User</button>
+<button class="alert alert-success"(click)="DeleteUser()">Delete User</button>
+<button class="alert alert-warning" (click)="getUserPosts()">
+  Get Posts By User
+</button>
 <div *ngIf="show">
-user address:<br>
-<pre>{{user.address | json}}</pre></div>
-<button class="btn btn-dark" (click)="getCompany()">{{company}}</button>
+  user address details:<br />
+  <table>
+    <tr>
+      <th>User Street :</th>
+      <th>{{ user.address.street }}</th>
+    </tr>
+    <tr>
+      <th>User Suite :</th>
+      <th>{{ user.address.suite }}</th>
+    </tr>
+    <tr>
+      <th>User City :</th>
+      <th>{{ user.address.city }}</th>
+    </tr>
+    <tr>
+      <th>User Zipcode :</th>
+      <th>{{ user.address.zipcode }}</th>
+    </tr>
+    <tr>
+      <th>User Latitude :</th>
+      <th>{{ user.address.geo.lat }}</th>
+    </tr>
+    <tr>
+      <th>User Longitude :</th>
+      <th>{{ user.address.geo.lng }}</th>
+    </tr>
+  </table>
+</div>
 <div *ngIf="show1">
   User Company Details:
-<pre>{{user.company | json}}</pre></div>
-<button class="btn btn-success" (click)="CreateUser()">Create User </button>
-<button class="btn btn-primary" (click)="UpdateUser()">Update User</button>
-<button class="btn btn-danger" (click)="DeleteUser()">Delete User</button>
-<button class="btn btn-warning" (click)="getUserPosts()">Get Posts By User</button>
-<h4>User's Post</h4>
-<pre>
-{{posts | async | json}}
+  <table>
+    <tr>
+      <th>Company Name :</th>
+      <th>{{user.company.name}}</th>
+    </tr>
+    <tr>
+      <th>Company Catch Phrase :</th>
+      <th>{{user.company.catchPhrase}}</th>
+    </tr>
+    <tr>
+      <th>BS</th>
+      <th>{{user.company.bs}}</th>
+    </tr>
+  </table>
+  </div>
+<div style="width:600px ;" *ngIf="show2">
+  <h4>User's Post</h4>
+  <!-- <table>
+    <tr><th>User Id : </th><th>{{post.userId }}</th></tr>
+    <tr><th>Id</th><th>{{post.id }}</th></tr>
+    <tr><th>Title</th><th>{{post.title }}</th></tr>
+    <tr><th>Body</th><th>{{post.body }}</th></tr>
+  </table> -->
+  <pre
+    >{{ posts | async | json }}
 </pre>
+
+</div>

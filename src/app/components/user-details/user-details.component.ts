@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IUser, IAddress } from './../../interfaces/user';
 import { UserService } from 'src/app/services/user/user.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Posts } from 'src/app/interfaces/posts';
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -14,7 +14,10 @@ export class UserDetailsComponent implements OnInit {
   posts: any;
   show: boolean = false;
   show1: boolean = false;
+  show2: boolean = false;
   company: string = 'show company Details';
+  Address:string = 'show Address';
+  showpost: string = 'show Posts';
   constructor(
     private activatedRoute: ActivatedRoute,
     private UserService: UserService
@@ -53,10 +56,23 @@ export class UserDetailsComponent implements OnInit {
     );
   }
   getUserPosts() {
-    this.posts = this.UserService.getUserPosts(this.user.id);
+    if (this.show2 === true) {
+      this.showpost= 'Show Posts';
+      this.show2 = false;
+    } else {
+      this.show2 = true;
+      this.showpost= 'Hide Posts';
+    }
+    this.posts= this.UserService.getUserPosts(this.user.id);
   }
   getAddress() {
-    this.show = true;
+    if (this.show === true) {
+      this.Address = 'show Address';
+      this.show = false;
+    } else {
+      this.show = true;
+      this.Address = 'Hide Address';
+    }
   }
   getCompany() {
     if (this.show1 === true) {

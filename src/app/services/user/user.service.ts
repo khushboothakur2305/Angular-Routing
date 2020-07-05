@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IUser, IAddress } from 'src/app/interfaces/user';
+import { Posts } from "src/app/interfaces/posts";
 import { HttpClient, HttpParams ,HttpHeaders} from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 
@@ -14,7 +15,7 @@ export class UserService {
   //   this._prop)
  ;
   private users: IUser[];
-  private addr: IAddress[];
+  private posts:Posts[];
 
   constructor(private http: HttpClient) {}
   getUsersByRest(): Observable<IUser[]> {
@@ -24,9 +25,21 @@ export class UserService {
   getUsers(): IUser[] {
     return this.users;
   }
+  getPostsByRest(): Observable<Posts[]> {
+    let headers = new HttpHeaders().set('Authorization','Bearer your-access-token-here')
+    return this.http.get<Posts[]>(this._rootURL,{headers});
+  }
+
+  getPosts(): Posts[] {
+    return this.posts;
+  }
   getUsersviaIdRest(id: number): Observable<IUser> {
         return this.http.get<IUser>(`${this._rootURL}/${id}`);
   }
+
+  getPostsviaIdRest(id: number): Observable<Posts> {
+    return this.http.get<Posts>(`${this._rootURL}/${id}`);
+}
   CreateUser(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(this._rootURL, user);
   }
