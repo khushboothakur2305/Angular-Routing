@@ -1,10 +1,17 @@
-import { Directive } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appUnless]'
+  selector: "[appUnless]",
 })
 export class UnlessDirective {
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private vcRef: ViewContainerRef
+  ) {}
 
-  constructor() { }
-
+  @Input() set appUnless(condition) {
+    condition
+      ? this.vcRef.clear()
+      : this.templateRef.createEmbeddedView(this.templateRef);
+  }
 }

@@ -3,13 +3,21 @@ user id : {{user.id}}<br>
 user name : {{user.name}}<br>
 user username : {{user.username}}<br>
 user email : {{user.email}}<br>
-user phone: {{user.phone}}
+user phone: {{user.phone}}<br>
 user website:{{user.website}}<br>
-<!-- user address:<br>
-<pre>{{user.address | json}}</pre>
-user Company:<br>
-<pre>{{user.company | json}}</pre> -->
+<button class="btn btn-dark" (click)="getAddress()">Get Address </button>
+<div *ngIf="show">
+user address:<br>
+<pre>{{user.address | json}}</pre></div>
+<button class="btn btn-dark" (click)="getCompany()">{{company}}</button>
+<div *ngIf="show1">
+  User Company Details:
+<pre>{{user.company | json}}</pre></div>
 <button class="btn btn-success" (click)="CreateUser()">Create User </button>
 <button class="btn btn-primary" (click)="UpdateUser()">Update User</button>
 <button class="btn btn-danger" (click)="DeleteUser()">Delete User</button>
-<!-- <button class="btn btn-warning" (click)="getUserPosts()">Get Post By User</button> -->
+<button class="btn btn-warning" (click)="getUserPosts()">Get Posts By User</button>
+<h4>User's Post</h4>
+<pre>
+{{posts | async | json}}
+</pre>
