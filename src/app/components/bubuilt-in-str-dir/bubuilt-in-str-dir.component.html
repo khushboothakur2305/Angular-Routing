@@ -1,23 +1,41 @@
-<button class="btn btn-primary " (click)="showlist=!showlist">Toggle list Visibility</button>
-<hr>
+<button class="btn btn-primary" (click)="showlist = !showlist">
+  Toggle list Visibility
+</button>
+<hr />
 <div *ngIf="showlist">
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let message of messages;let i = index">
-index:{{i}} , messages:{{message}}
-  </li>
-</ul>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let message of messages; let i = index">
+      index:{{ i }} , messages:{{ message }}
+    </li>
+  </ul>
 </div>
-<hr>
-<h4> NgSwitch </h4>
-<input type="text" class="form-control" [(ngModel)]="alertType"><br>
+<hr />
+<h4>NgSwitch</h4>
+<input type="text" class="form-control" [(ngModel)]="alertType" /><br />
 <div [ngSwitch]="alertType">
-<div *ngSwitchCase="'primary'" class="alert alert-primary" role="alert">  A simple primary alert—check it out!</div>
-<div *ngSwitchCase="'secondary'" class="alert alert-secondary" role="alert">  A simple secondary alert—check it out!</div>
-<div *ngSwitchCase="'success'" class="alert alert-success" role="alert">  A simple success alert—check it out!</div>
-<div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">  A simple danger alert—check it out!</div>
-<div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">  A simple warning alert—check it out!</div>
-<div *ngSwitchCase="'information'" class="alert alert-info" role="alert">  A simple info alert—check it out!</div>
-<div *ngSwitchCase="'light'" class="alert alert-light" role="alert">  A simple light alert—check it out!</div>
-<div *ngSwitchCase="'dark'" class="alert alert-dark" role="alert">  A simple dark alert—check it out!</div>
-<div *ngSwitchDefault class="alert" role="alert">This is default case</div>
+  <div *ngSwitchCase="'primary'" class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'secondary'" class="alert alert-secondary" role="alert">
+    A simple secondary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+  </div>
+  <div *ngSwitchCase="'information'" class="alert alert-info" role="alert">
+    A simple info alert—check it out!
+  </div>
+  <div *ngSwitchCase="'light'" class="alert alert-light" role="alert">
+    A simple light alert—check it out!
+  </div>
+  <div *ngSwitchCase="'dark'" class="alert alert-dark" role="alert">
+    A simple dark alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert" role="alert">This is default case</div>
 </div>

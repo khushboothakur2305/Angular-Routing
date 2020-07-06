@@ -16,7 +16,7 @@ export class UserDetailsComponent implements OnInit {
   show1: boolean = false;
   show2: boolean = false;
   company: string = 'show company Details';
-  Address:string = 'show Address';
+  Address: string = 'show Address';
   showpost: string = 'show Posts';
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -57,13 +57,13 @@ export class UserDetailsComponent implements OnInit {
   }
   getUserPosts() {
     if (this.show2 === true) {
-      this.showpost= 'Show Posts';
+      this.showpost = 'Show Posts';
       this.show2 = false;
     } else {
       this.show2 = true;
-      this.showpost= 'Hide Posts';
+      this.showpost = 'Hide Posts';
     }
-    this.posts= this.UserService.getUserPosts(this.user.id);
+    this.posts = this.UserService.getUserPosts(this.user.id);
   }
   getAddress() {
     if (this.show === true) {
