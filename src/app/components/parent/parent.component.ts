@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent implements OnInit {
-
+DateToday:string;
   constructor() { }
 
   ngOnInit(): void {
+  this.DateToday=new Date().toDateString();
   }
 
 }

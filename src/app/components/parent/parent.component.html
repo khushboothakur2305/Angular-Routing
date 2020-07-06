@@ -1,1 +1,9 @@
-<p>parent works!</p>
+<app-one></app-one>
+<app-two></app-two>
+<hr>
+<h4>Pipes</h4>
+<ul class="list-group">
+  <li class="list-group-item">Date without pipe :  {{DateToday}}</li>
+  <li class="list-group-item">Date With Pipe : {{DateToday|date }}</li>
+  <li class="list-group-item">Date with the pipe and params :  {{DateToday|date:'full'|lowercase}}</li>
+</ul>

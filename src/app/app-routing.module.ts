@@ -24,7 +24,7 @@ children:[
  { path:":userid",component:UserDetailsComponent},
 {path:"",component:PlaceholderComponent}
 ]},
-{path:'parent', component:ParentComponent},
+{path:'parent', component:ParentComponent  },
 {path:'build-in' ,component:BubuiltInStrDirComponent},
 {path:'build-in-atr' ,component:BuiltInAttributeDirectiveComponent},
 {path:'directives' ,component:DirectivehostComponent},
