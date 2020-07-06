@@ -14,11 +14,11 @@
   </tr>
   <tr>
     <th>user email :</th>
-    <th>{{ user.email }}</th>
+    <th><a href="{{ user.email |appendor:'pre':'mailto://' }}">{{ user.email }}</a></th>
   </tr>
   <tr>
     <th>user phone:</th>
-    <th>{{ user.phone }}</th>
+    <th><a href="{{ user.phone  |appendor:'pre':'tel://'}}">{{ user.phone }}</a></th>
   </tr>
   <tr>
     <th>user website:</th>

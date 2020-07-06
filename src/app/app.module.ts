@@ -24,6 +24,7 @@ import { ChangeCaseDirective } from './directives/change-case.directive';
 import { UnlessDirective } from './directives/unless/unless.directive';
 import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
+import { AppendorPipe } from './appendor/appendor.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TwoComponent } from './components/two/two.component';
     ChangeCaseDirective,
     UnlessDirective,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    AppendorPipe
   ],
   imports: [
     BrowserModule,
