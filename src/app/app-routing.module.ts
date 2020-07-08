@@ -15,6 +15,8 @@ import { BubuiltInStrDirComponent } from './components/bubuilt-in-str-dir/bubuil
 import { ParentComponent } from './components/parent/parent.component';
 import { BuiltInAttributeDirectiveComponent } from './components/built-in-attribute-directive/built-in-attribute-directive.component';
 import { DirectivehostComponent } from './components/directivehost/directivehost.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,6 +28,9 @@ const routes: Routes = [
       { path: '', component: PlaceholderComponent },
     ],
   },
+
+  { path: 'new-user-reactive', component:NewUserReactiveComponent},
+  { path: 'new-user', component:NewUserComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'build-in', component: BubuiltInStrDirComponent },
   { path: 'build-in-atr', component: BuiltInAttributeDirectiveComponent },

@@ -13,10 +13,16 @@ export class UserService {
   public propchanged: BehaviorSubject<string> = new BehaviorSubject<string>(
     this._prop
   );
+
   private users: IUser[];
   private posts: Posts[];
 
   constructor(private http: HttpClient) {}
+
+  addUser(user:IUser){
+    this.users.push(user);
+  }
+
   getprop(): string {
     return this._prop;
   }

@@ -24,8 +24,12 @@ import { ChangeCaseDirective } from './directives/change-case.directive';
 import { UnlessDirective } from './directives/unless/unless.directive';
 import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
-import { AppendorPipe } from './appendor/appendor.pipe';
+import { AppendorPipe } from './pipes/appendor/appendor.pipe';
+import { FilterPipe } from './pipes/flter/filter.pipe';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
 
+import { ReactiveFormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +52,9 @@ import { AppendorPipe } from './appendor/appendor.pipe';
     OneComponent,
     TwoComponent,
     AppendorPipe,
+    FilterPipe,
+    NewUserComponent,
+    NewUserReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import { AppendorPipe } from './appendor/appendor.pipe';
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

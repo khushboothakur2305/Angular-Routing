@@ -3,10 +3,10 @@ export interface IUser {
   name: string;
   username: string;
   email: string;
-  address: IAddress;
+ // address: IAddress;
   phone: string;
   website: string;
-  company: ICmp;
+ // company: ICmp;
 }
 
 export interface IAddress {
