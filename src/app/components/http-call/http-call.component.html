@@ -1,0 +1,160 @@
+<div fxLayout>
+  <div style="text-align: center;">
+    <h1>
+      Welcome to<br />
+      HTTP Client Module
+    </h1>
+  </div>
+  <div style="text-align: center; padding: 20px;">
+    <button class="alert alert-info" (click)="getposts()">{{ showpost }}</button
+    >&nbsp;&nbsp;&nbsp;
+    <button class="alert alert-dark" (click)="getcomments()">{{commentpost}}</button
+    >&nbsp;&nbsp;&nbsp;
+    <button class="alert alert-danger" (click)="getalbum()">{{albumpost}}</button
+    >&nbsp;&nbsp;&nbsp;
+    <button class="alert alert-primary" (click)="getphotos()">{{photospost}}</button
+    >&nbsp;&nbsp;&nbsp;
+    <button class="alert alert-success" (click)="todolist()">{{todopost}}</button
+    >&nbsp;&nbsp;&nbsp;
+    <button class="alert alert-warning" (click)="getusers()">{{userpost}}</button
+    >&nbsp;&nbsp;&nbsp;
+  </div>
+  <div *ngIf="post2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">Posts List</tr>
+        <tr>
+          <th scope="row">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color: lightblue;" class="list-group-item" *ngFor="let post of posts">
+                  User Id : {{ post.userId }}<br />
+                  ID : {{ post.id }}<br />
+                  Title : {{ post.title }}<br />
+                  Body : {{ post.body }}<br /><br />
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="comment2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">Comment List</tr>
+        <tr>
+          <th scope="row">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color:rgb(173, 170, 170);" class="list-group-item" *ngFor="let comment of comments">
+                  Body: {{comment.body}}<br>
+                  Email : {{ comment.email }}<br />
+                  ID : {{ comment.id }}<br />
+                  Name : {{ comment.title }}<br />
+                  PostId : {{ comment.postId }}<br />
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="album2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">Album List</tr>
+        <tr>
+          <th scope="row">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color: lightpink;" class="list-group-item" *ngFor="let post of album">
+                  User Id : {{ post.userId }}<br />
+                  ID : {{ post.id }}<br />
+                  Title : {{ post.title }}<br />
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="photos2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">Photo List</tr>
+        <tr>
+          <th scope="column">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color: cornflowerblue;" class="list-group-item" *ngFor="let photo of photos">
+                  Album Id: {{photo.albumId}}<br>
+                 Thumbnail: <img [src]="photo.thumbnailUrl"><br>
+                 Title : {{photo.title}}<br>
+                 Image : <img [src]="photo.url"><br>
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="todo2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">TODO List</tr>
+        <tr>
+          <th scope="row">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color: lightgreen;" class="list-group-item" *ngFor="let to of todo">
+                  User Id : {{ to.userId }}<br />
+                  ID : {{ to.id }}<br />
+                  Title : {{ to.title }}<br />
+                  Completed : {{ to.completed }}<br /><br />
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="user2">
+    <table class="table">
+      <tbody>
+        <tr style="font-size: 40px;font-weight: bold;text-align: center;">User List</tr>
+        <tr>
+          <th scope="row">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li style="background-color: lightyellow;" class="list-group-item" *ngFor="let user of users">
+                  ID : {{ user.id }}<br />
+                  Name : {{ user.name }}<br />
+                  UserName : {{ user.username }}<br />
+                  Email : {{ user.email }}<br />
+                  Phone: {{ user.phone }}<br>
+                  Website: {{ user.website }}<br>
+                  <b><u>Address :</u></b><br>
+                  City: {{ user.address.city }}<br>
+                  Street: {{user.street}}<br>
+                  Geo: latitude: {{user.address.geo.lat}}<br>
+                  longitude:{{user.address.geo.lng}}<br>
+                  Suite: {{user.address.suite}}<br>
+                  Zipcode: {{user.address.zipcode}}<br>
+                 <b><u> Company :</u></b><br>
+                  Name: {{user.company.name}}<br>
+                  CatchPhrase: {{user.company.catchphrase}}<br>
+                </li>
+              </ul>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

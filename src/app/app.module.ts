@@ -28,8 +28,9 @@ import { AppendorPipe } from './pipes/appendor/appendor.pipe';
 import { FilterPipe } from './pipes/flter/filter.pipe';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
-
 import { ReactiveFormsModule } from "@angular/forms";
+import { ApiRequestComponent } from './api-request/api-request.component';
+import { HttpCallComponent } from './components/http-call/http-call.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     FilterPipe,
     NewUserComponent,
     NewUserReactiveComponent,
+    ApiRequestComponent,
+    HttpCallComponent,
   ],
   imports: [
     BrowserModule,

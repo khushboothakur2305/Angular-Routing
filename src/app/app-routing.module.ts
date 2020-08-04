@@ -17,9 +17,14 @@ import { BuiltInAttributeDirectiveComponent } from './components/built-in-attrib
 import { DirectivehostComponent } from './components/directivehost/directivehost.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
+import { ApiRequestComponent } from './api-request/api-request.component';
+import { HttpCallComponent } from './components/http-call/http-call.component';
 
 const routes: Routes = [
+
+  { path: 'apirequest', component: ApiRequestComponent },
   { path: 'home', component: HomeComponent },
+  {path:'http',component:HttpCallComponent},
   {
     path: 'users',
     component: UsersComponent,
